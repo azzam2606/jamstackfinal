@@ -1,0 +1,203 @@
+---
+title: 11ty Example
+layout: base.njk
+---
+<!-- banner --> 
+    <div class="container-fluid banner">
+      <div class="container text-center">
+        <h4 class="display-6">Selamat Datang di Website Kami</h4>
+        <h3 class="display-1"> Wisata Jogjakarta</h3>
+        <a href="#galery">
+          <br><br><br>
+          <button type="button" class="btn btn-danger btn-lg">
+            Cek Galery
+          </button>
+        </a>
+      </div>
+    </div>
+  
+  <!-- Galery -->
+    <div class="container-fluid galery pt-5 pb-5 bg-light">
+      <div class="container text-center">
+        {% for galery in galery.data %}
+        <h2 class="display-3" id="galery">{{ galery.title}}</h2>
+        <p>
+       {{galery.desc}}
+        </p>
+        <div class="row pt-4 gx-4 gy-4">
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ galery.image1 }}?access_token=admin"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ galery.tdesc }}</h5>
+                <p class="card-text">
+                  {{galery.subdesc}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ galery.image2 }}?access_token=admin"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{galery.tdesc2}}</h5>
+                <p class="card-text">
+                 {{galery.subdesc2}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ galery.image3 }}?access_token=admin"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{galery.tdesc3}}</h5>
+                <p class="card-text">
+                {{galery.subdesc3}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ galery.image4 }}?access_token=admin"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{galery.tdesc4}}</h5>
+                <p class="card-text">
+                 {{galery.subdesc4}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ galery.image5 }}?access_token=admin"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{galery.tdesc5}}</h5>
+                <p class="card-text">
+               {{galery.subdesc5}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ galery.image6 }}?access_token=admin"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{galery.tdesc6}}</h5>
+                <p class="card-text">
+                  {{galery.subdesc6}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <li>This Empty</li>
+    {% endfor %}
+    </div>
+    <!-- tentang -->
+    
+    <div class="container-fluid tentang pt-5 pb-5">
+      
+      <div class="container">
+      {% for post in post.data %}
+        <h2 class="display-3 text-center" id="tentang">{{post.title}}</h2>
+        <h3 class="text-center"> {{post.description}}</h3>
+        <div class="clearfix pt-5">
+          <img
+            src="http://localhost:8055/assets/{{ post.image }}?access_token=admin"
+            class="col-md-6 float-md-end mb-3 crop-img"
+            width="300"
+            height="300"
+          />
+         <p>{{post.subdesc}}</p>
+         <p>{{post.subdesc2}}</p>
+        </div>
+      </div>  
+      {% else %}
+        <li>This Empty</li>
+      {% endfor %}
+    </div>
+      <!-- Popular -->
+    <div class="container-fluid popular pt-5 pb-5 bg-light">
+      <div class="container text-center">
+        {% for popular in popular.data %}
+        <h2 class="display-3" id="popular">{{popular.title}}</h2>
+        <p>
+        {{popular.desc}}
+        </p>
+        <div class="row pt-4 gx-4 gy-4">
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ popular.image1 }}?access_token=admin"
+                class="card-img-top"
+                width="200"
+                height="400"
+              />
+            <h4>{{popular.tdesc}}</h4>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ popular.image2 }}?access_token=admin"
+                class="card-img-top"
+                width="300"
+                height="400"
+              />
+            <h4>{{popular.tdesc2}}</h4>
+            </div>
+          </div> 
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="http://localhost:8055/assets/{{ popular.image3 }}?access_token=admin"
+                class="card-img-top"
+                width="250"
+                height="400"
+              />
+            <h4>{{popular.tdesc3}}</h4>
+            </div>
+          </div> 
+            
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <li>This Empty</li>
+    {% endfor %}
+    </div>
